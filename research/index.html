@@ -1,0 +1,278 @@
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<!-- This comment line needed for bootstrap to work on mobile devices -->
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta charset="utf-8">
+            <meta name="author" content="Laura Stoinski">
+            <title>Research</title>
+            <link rel="icon" type="image/x-icon" href="https://laurastoinski.com/website/icon_edit.png">
+</head>
+
+<style type="text/css">
+
+@media screen and (max-width: 600px)  {
+
+  /* #goBack {
+    position: fixed;
+    font-size: 4vw;
+    color: black;
+    border: 2px;
+    text-decoration: none;
+    font-family: "Archive", "Arial", sans serif;
+    } */
+  
+
+  .blocks {
+    float: left !important;
+    width: 100% !important;  
+    margin-right: 0vw; 
+    margin-left: 0vw;
+    margin-top: 1vw;
+
+  }
+  
+    #researchB {
+  margin-top: 80vw !important;
+  }
+
+
+
+    .button {
+        font-size: 4vw !important;
+    }
+
+    td {
+    font-size: 3vw !important;
+    }
+ 
+
+}
+
+
+/* #goBack {
+  position: fixed;
+  font-size: 1vw;
+  color: black;
+  text-decoration: none;
+  font-family: "Archive", "Arial", sans serif;
+  } */
+
+    td {
+        font-size: 1.4vw;
+        font-family: "Arial", sans serif;
+        text-align: justify;
+        line-height: 1.5;
+      	padding-right: 0.5vw;
+    }
+
+    .button {
+        font-size: 2vw;
+        font-family: "Arial", sans serif;        
+        padding: 0;
+        border: none;
+        background: none;
+       	color: inherit !important;
+       	transition: all .2s ease-in-out; 
+    }
+  
+  
+  .button:hover { 
+    transform: scale(1.2); 
+  }
+
+
+    .drawing {
+        max-height: 27vw;
+        max-width: auto;
+    }
+  
+
+    .backForth {
+        margin-top: 1vw;
+      	padding-top: 1vw;
+        display: inline;
+    }
+  
+</style>
+
+ 
+ <h1 style = "display: none">so I am searchable</h1>
+  <h2 style = "display: none">so I am searchable</h2>
+
+  <!-- <a class = "text" id = "goBack" href = "http://laurastoinski.com">&#9664; BACK</a> -->
+
+  <!-- <iframe src="https://hva-uva.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=59ac1871-1f1d-4754-bdcc-b32100cff8bd&start=4140.483"
+        width="800"
+        height="450"
+        frameborder="0"
+        allowfullscreen>
+</iframe> -->
+  
+<div class = "blocks" id = "researchA" style = "float: right; width: 70%; margin-right: 5vw; margin-top: 5vw;">
+    <table id = "A1">
+        <td><button id = "buttA1" class = "button" onclick="nextA()" style = "float:right; width: 70%; padding-right: 2vw; font-size: 2vw"> OBJECT REPRESENTATIONS, DIMENSIONS, & THE AIM OF MY RESEARCH &rarr;</button> </td>
+        <td><img id = "buttA1" class = "drawing" src="https://laurastoinski.com/research/researchA1.jpg" onclick="nextA()"> </td>
+    </table>
+
+  <div id = "A2" style = "display: none">
+    <table>
+        <td>
+            <p>Making sense of the world around us is a vital ability of the human brain. Nearly effortlessly, we are able to recognize a sheer endless amount of object categories 
+                and retrieve their key properties. For instance, we are able to recognize a mug when we see it, know that we can drink from it, and even anticipate how heavy it is 
+                going to feel when we pick it up. Similarly, we can report visual attributes (e.g., “it is green”), conceptual knowledge (e.g., “it is artificial”), and properties of 
+                other modalities (e.g., haptic: “it feels smooth”) when reading or hearing the word “mug.” </p>
+            <div class = "backForth">
+                <button class = "button" style = "float: left;" onclick="lastA()">&#9666;</button>  
+                <button  class = "button" style = "float: right;" onclick="nextA()">&#9656; </button> 
+            </div>
+        </td>
+        <td><a onclick="nextA()"> <img class = "drawing" src="https://laurastoinski.com/research/researchA2.png"> </a> </td>
+    </table>
+
+  </div>
+  
+  <!---
+  <div id = "A3" style = "display: none">
+    <table >
+        <td style = "line-height: 1.3;">
+            <div style = "margin-right: 1vw;">Object recognition is supported by the ventral visual stream, a hierarchy of brain regions spanning 
+                the occipitotemporal cortex. Along the ventral stream, <b>object categories are represented by a distributed 
+                pattern of activation. We think this pattern reflects a combination of object features or 
+                dimensions with increasing complexitiy.</b>
+                <br> <br>i.e., the represented information ranges from low-level visual features like eccentricity, color, or orientation of the object, over 
+                mid-level properties as structure and shape, to high-level 
+                conceptual properties, as animacy & real-world size.
+            </div>
+            <div class = "backForth">
+                <button class = "button" style = "float: left;" onclick="lastA()">&#9666;</button> 
+                <button  class = "button" style = "float: right;" onclick="nextA()">&#9656; </button> 
+            </div>
+        </td>
+      
+        <td><a onclick="nextA()"><img class = "drawing" src="https://laurastoinski.com/research/researchA3.png"></a></td>
+    </table>
+  </div>
+  --->
+  
+  <div id = "A3" style = "display: none">
+    <table>
+        <td>
+            <div style = " margin-right: 1vw;">
+                We can identify countless perceptual and semantic properties to describe objects. But which of these does the brain rely on to distinguish between objects, and <b> which are the most important?</b>
+                Decades of research have explored these questions, revealing several candidate dimensions, such as eccentricity, curvature, animacy, and size. However, both visual input and semantic knowledge 
+              contribute to how objects are represented in the brain. Since these two factors are deeply intertwined, it remains <b>challenging to disentangle the influence of dimensions rooted in visual input from those grounded in semantic knowledge</b>.
+            </div>
+            <div class = "backForth">
+                <button class = "button" style = "float: left;" onclick="lastA()">&#9666;</button>  
+                <button  class = "button" style = "float: right;" onclick="nextA()">&#9656; </button> 
+            </div>
+        </td>
+        <td><a onclick="nextA()"><img class = "drawing" src="https://laurastoinski.com/research/researchA4.png"><a/></td>
+    </table>
+	</div>
+  
+  <div id = "A4" style = "display: none">
+    <table >
+        <td>
+            <div> For instance,<b>visual dimensions are often 
+                correlate with semantic properties or specific categories</b>, e.g. most mammals (semantic category) 
+                have a curved shape (mid-level visual feature). And even congentially blind people may have a concept of visual features and relate, say, the color red with roses, cherries and wine.  
+            </div>
+            <div class = "backForth">
+                <button class = "button" style = "float: left;" onclick="lastA()">&#9666;</button>  
+                <button  class = "button" style = "float: right;" onclick="nextA()">&#9656; </button> 
+            </div>
+        </td>
+        <td><a onclick="nextA()"><img class = "drawing" src="https://laurastoinski.com/research/researchA5.png"></a></td>
+    </table>
+  </div>
+
+<!--
+    <table id = "A6" style = "display: none">
+        <td style = "vertical-align: middel;  margin-right: 1vw;">
+            <div>Additionally, <b>many visual features are also part of semantic knowledge</b>. 
+                For example, congenitally blind people may never have seen a zebra, but still know how they look like from reading or hearing about them. 
+                Thus they might consider visual properties to a 
+                similar degree as sighted, e.g., judging a zebra as more similar to a tiger than a rabbit as they both have stripes.
+            </div>
+            <br>
+            <div class = "backForth">
+                <button class = "button" style = "float: left;" onclick="lastA()">&larr;</button>  
+                <button  class = "button" style = "float: right;" onclick="nextA()">&rarr;</button> 
+            </div>
+        </td>
+        <td><img class = "drawing" src="http://laurastoinski.com/research/researchA6.PNG"></td>
+    </table>
+-->
+  
+  <div id = "A5" style = "display: none">
+    <table >
+
+        <td style = "vertical-align: middle;">
+            <p style = "margin-right:1px">Also, some dimensions like size are represented at a <b>lower visual level</b> (i.e., the space an object occupies on the retina when we look at it) 
+                as well as at a <b>higher conceptual level</b> (i.e., how large we know that the object actually is).
+            </p>
+         
+            <div class = "backForth">
+                <button class = "button" style = "float: left;" onclick="lastA()">&#9666;</button>  
+                <button  class = "button" style = "float: right;" onclick="nextA()">&#9656; </button> 
+            </div>
+        </td>
+        <td><a onclick="nextA()"><img class = "drawing" src="https://laurastoinski.com/research/researchA7.png"></a></td>
+    </table>  
+  </div>
+  
+  <div id = "A6" style = "display: none">
+    <table >
+
+        <td>
+            <div style = "margin-right:1px">Ok, you get the problem here... 
+                To disentangle visual-perceptual, visual-semantic, and other semantic dimensions, I aim to identify the properties people use to differentiate object <b> images v. words</b>. I will then examine how these image-derived and word-derived dimensions are reflected in fMRI responses to the same images and words. Additionally, I am investigating object representations in both <b>sighted and congenitally blind individuals</b>. Through this work, I hope to uncover the dimensions shaping object representations when visual input or experience is present versus absent.
+                This page is where I'll post all my updates, so stay tuned!
+            </div>
+         
+            <div class = "backForth">
+                <button class = "button" style = "float: left;" onclick="lastA()">&#9666;</button>  
+                
+            </div>
+        </td>
+        <td><img class = "drawing" src="https://laurastoinski.com/research/researchA8.png"></td>
+    </table>
+  </div>
+  
+  <br>
+</div> <!-- End research A-->
+  
+  <div class = "blocks" id = "researchB" style = " position: absolute; max-width: 70%;  margin-left: 5vw; margin-top: 33vw;display: none">
+    <table id = "B1">
+        <td><img id = "buttB1" class = "drawing" src="https://laurastoinski.com/research/researchB1_medium.png" onclick=""> </td>
+      <td><button id = "buttB1" class = "button" onclick="" style = "float:left; width: 70%; padding-left: 2vw; font-size: 2vw"> REVISTING THE ANIMACY & SIZE ORGANIZATION OF HUMAN VISUAL CORTEX (soon) </button> </td>
+    </table>
+  </div>
+
+</html>
+<script>
+
+    // slide show for project A ---------------------
+    var cntA1 = 1
+    function nextA() { // go to nect slide
+        var curSlide = '#A' + cntA1;
+        $(curSlide).hide();
+        cntA1 += 1
+        var nextSlide = '#A' + cntA1;
+        $(nextSlide).show();
+        console.log(cntA1)
+   }
+
+   function lastA() { // go to last slide
+        var curSlide = '#A' + cntA1;
+        $(curSlide).hide();
+        cntA1 -= 1
+        var lastSlide = '#A' + cntA1;
+        $(lastSlide).show();
+   }
+  
+
+  
+</script>
