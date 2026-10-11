@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="description" content="Personal website of Laura Stoinski">
+  <meta name="author" content="Laura Stoinski">
+  <title>STOINSKI</title>
+  <link rel="icon" type="image/x-icon" href="https://laurastoinski.com/website/icon_edit.png">
+</head>
+
+<style type="text/css">
+:root {
+  --accent-color: #8a3d07;   /* old red #e03636;  orange #ff8800 */
+}
+
+/* keep images from overflowing anywhere */
+img { max-width: 100%; height: auto; }
+
+/* desktop behavior */
+@media (min-width: 801px) {
+
+  #abTab > tbody,
+  #abTab > tbody > tr { display: contents; }
+
+  /* grid container controlling image size */
+  #abTab {
+    --about-top-space: 1.2vw;
+    display: grid;
+    grid-template-columns: minmax(340px, 34vw) 1fr;
+    gap: 1.2vw;
+    align-items: start;
+  }
+
+  #portrait {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: var(--about-top-space);
+  }
+
+  /* top-aligned text */
+  #abTab .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 0.5vw;
+    line-height: 1.5;
+  }
+}
+
+/* phone screen behavior */
+@media (max-width: 800px)  {
+
+  li a {
+    font-size: 3vw !important;
+    padding: 0.5vw !important;
+  }
+
+  /* DO NOT blow up tables on mobile */
+  table {
+    width: 100%;
+    display: table;
+  }
+
+  tbody td {
+    display: block;
+    margin-bottom: 0.7vw;
+  }
+
+  tbody td:before {
+    content: attr(data-th);
+    display: block;
+    text-align:left;
+    width: 100%;
+  }
+
+  .hanging {
+    font-size: 3vw !important;
+    text-align: left;
+  }
+
+  #lib { display: none; }
+
+  .Butt {
+    margin-top: 2vw;
+    width: 100% !important;
+    font-size: 6vw !important;
+  }
+
+  .Butt2 { display: none; }
+
+  .text { font-size: 4vw !important; }
+
+  #name { font-size: 6vw !important; }
+
+  .contactButt {
+    font-size: 6vw !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* show mobile portrait, make it reasonable size, center it */
+  #portrait2 {
+    display: block !important;
+    visibility: visible !important;
+    width: clamp(220px, 85vw, 520px) !important;
+    margin: 3vw auto 5vw;
+  }
+
+  #portrait { display: none !important; }
+}
+
+.text {
+  font-size: 1.5vw;
+  font-family: "Archive", "Arial", sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+table { width: 98%; }
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-family: "Archive", "Arial", sans-serif;
+}
+
+a:hover {
+  color: var(--accent-color) !important;
+  text-decoration: none;
+}
+
+/* navigation bar */
+.logo {
+  display: inline-block;
+  height: 3vw;
+  margin-left: 0.7vw;
+  margin-top: 0.8vw;
+  vertical-align: middle; /* 'float: middle' is invalid */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0 auto;
+  max-width: 95%;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  position: fixed;
+  width: 98%;
+  border: 0.3vw solid black;
+  margin-top: 1vw;
+  z-index: 9999; /* to fix bug with overlapping grayscale*/
+}
+
+li { float: right; }
+
+li a {
+  display: block;
+  color: black;
+  font-size: 2.2vw;
+  text-align: center;
+  padding: 0.6vw 1.3vw;
+  text-decoration: none;
+  margin-right: 0.7vw;
+  margin-top: 0.5vw;
+  margin-bottom: 0.3vw;
+}
+
+li a:hover {
+  background-color: #111;
+  color: white !important;
+}
+
+/* about */
+#about {
+  padding: 2.5vw;
+  margin-bottom: 1vw;
+  width: 100%;
+}
+
+/* cv */
+td { padding: 0.5vw; }
+
+.Img {
+  height: 15vw;
+  filter: grayscale(100%);
+}
+
+.Butt {
+  width: 13vw;
+  height: 15vw;
+  background-color: white;
+  border: 0.3vw solid black;
+  font-size: 2.3vw;
+  font-family: "Archive", "Arial", sans-serif;
+  text-align: center;
+  color: black !important;
+  padding: 1vw;
+}
+
+.Butt:hover {
+  color: white !important;
+  background-color: black;
+}
+
+/* publication */
+.Butt2 {
+  width: 18vw !important;
+  height: 15vw;
+  font-size: 2vw;
+  font-family: "Archive", "Arial", sans-serif;
+  text-align: center;
+  background-color: rgb(209, 209, 207, 0.6);
+  border: none;
+  color: inherit !important;
+}
+
+.Butt2:hover {
+  color: white !important;
+  background-color: var(--accent-color);
+}
+
+#pubList p.hanging {
+  text-indent: -2.5vw;
+  margin: 0 0 0 2.5vw;
+  padding: 0;
+  vertical-align: middle;
+  font-size: 1.3vw;
+  text-align: justify;
+}
+
+/* contact buttons (shared) */
+.contactButt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 99%;
+  height: 5vw;
+  background-color: white;
+  font-size: 2.2vw;
+  font-family: "Archive", "Arial", sans-serif;
+  text-align: center;
+  padding: 0.5vw;
+  transition: background-color 150ms ease, color 150ms ease;
+  position: relative; /* anchor for tooltip */
+  color: inherit !important;
+  border: none;
+}
+
+
+.contactButt:hover,
+.contactButt:focus-visible {
+  color: white !important;
+  background-color: black;
+}
+
+
+#email-link::after {
+  content: attr(data-email);
+  position: absolute;
+  top: -2.2em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  border: 0.15vw solid black;
+  padding: 0.2em 0.5em;
+  border-radius: 0.4em;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10000;
+  font-size: 1em;
+  opacity: 0;
+  transition: opacity 120ms ease-in-out;
+}
+
+
+#email-link:hover::after,
+#email-link:focus-visible::after,
+#email-link.show-tip::after {
+  opacity: 1;
+}
+
+/* quick "copied" feedback after click */
+#email-link.copied::after {
+  content: 'copied';
+  opacity: 1;
+}
+
+
+</style>
+  
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  var email_link = document.getElementById('email-link');
+  if (!email_link) return;
+
+  var email = (email_link.getAttribute('data-email') || '').trim();
+
+  /* copy on click; keep mail client behavior after copy */
+  email_link.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    var show_copied = function () {
+      email_link.classList.add('copied');
+      setTimeout(function () { email_link.classList.remove('copied'); }, 1200);
+    };
+
+    var open_mail = function () {
+      window.location.href = 'mailto:' + email;
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email)
+        .then(function () { show_copied(); open_mail(); })
+        .catch(function () { open_mail(); });
+    } else {
+      open_mail();
+    }
+  });
+
+  /* touch: tap shows tooltip briefly so users can see the address */
+  var hide_tip_timeout = null;
+  email_link.addEventListener('touchstart', function () {
+    email_link.classList.add('show-tip');
+    clearTimeout(hide_tip_timeout);
+    hide_tip_timeout = setTimeout(function () {
+      email_link.classList.remove('show-tip');
+    }, 1200);
+  }, {passive: true});
+});
+</script>
+
+<body>
+<!--- Navigation bar-->
+<!-- <canvas id="snowCanvas"></canvas> -->
+
+<nav class="navigation-bar">
+    <ul >
+      <img class="logo" src="https://laurastoinski.com/website/header_scaled.png">
+      <li><a href="#contact">CONTACT</a></li>
+      <li><a href="#pub">CONTRIBUTIONS</a></li>
+      <li><a href="http://laurastoinski.com/research" target="_blank">RESEARCH</a></li>
+      <li><a href= "">ABOUT</a></li>
+    </ul>
+</nav>
+<h1 style = "display: none">so I am searchable</h1>
+<h2 style = "display: none">so I am searchable</h2>
+
+<!--- About ------------>
+<section id = "about"></section>
+<img id="portrait2"  style = "display: none; visibility: hidden; width: 100%" src="https://laurastoinski.com/website/portrait_stoinski.png">
+<table id = "abTab" style = "width: 100%">
+  <td>
+    <img id="portrait"  alias = "Laura Stoinski" src="https://laurastoinski.com/website/portrait_stoinski.png">
+  </td>
+  <td class = "text" style="vertical-align: top; text-align: justify; line-height: 1.5">
+    <p><b id = "name" style = "font-size: 1.8vw;">LAURA MAI STOINSKI.</b>
+      Hi, I am a <span style="color: var(--accent-color)">Doctoral researcher</span> at the <a href = "https://www.cbs.mpg.de/en" target="_blank">Max Planck</a> Research Group <a href = "https://hebartlab.com/" target="_blank">"Vision and Computational Cognition."</a> My co-supervisors are
+      <a href = "https://martin-hebart.de/" target="_blank"><span style="color: var(--accent-color)">Prof. Martin Hebart</span></a> and <a href = "https://groupleaders.mpdl.mpg.de/group-leader/gesa-hartwigsen/" target="_blank"><span style="color: var(--accent-color)">Prof. Gesa Hartwigsen</span></a>.
+    </p>
+    <p>I am fascinated by how we perceive and represent the world around us. More specifically, my research examines the nature of internal object representations, such as our neural or mental representations of the concepts "dog," "peace," or "scientist."</p>
+    <p>Currently, my work is guided by three key questions: What are the core visual and semantic properties that enable us to recognize and differentiate objects? How are these properties mapped onto the human cortex? and What are the distinct contributions of visual input and semantic knowledge to visual object processing?</p>
+    <p>To address these questions, I compare the representations of object images with their corresponding nouns, and investigating how object representations differ between sighted and congenitally blind populations. 
+      My work integrates methods from neuroscience, computer science, and cognitive psychology to provide a comprehensive understanding of mind, brain and behavior.</p>
+  </td>
+</table>
+  
+
+<!--- CV -------------->
+<table id = "eduTab" style = "width: 100%">
+  <colgroup>
+     <col span="1" style="width: 85%;">
+     <col span="1" style="width: 15%;">
+  </colgroup>
+  <td>
+    <table class = "text" style = "width: 100%">
+      <colgroup>
+         <col span="1" style="width: 20%;">
+         <col span="1" style="width: 80%;">
+      </colgroup>
+      <tr style="vertical-align: middle;">
+        <td style="vertical-align: top;"><b>since 2023</b></td>
+        <td style="vertical-align: top;"> Doctoral researcher at the <a href = "https://www.lw.uni-leipzig.de/wilhelm-wundt-institut-fuer-psychologie/arbeitsgruppen/kognitive-und-biologische-psychologie" target="_blank">University of Leipzig</a> and the
+        <a href = "https://www.cbs.mpg.de/en" target="_blank"> Max Planck Institute for Human Cognitive & Brain Sciences</a>, Leipzig</td>
+      </tr>
+      <tr style="vertical-align: middle;">
+        <td style="vertical-align: top;"><b>2022 - 2023</b></td>
+        <td style="vertical-align: top;"> Research Fellow in the <a href = "https://hebartlab.com/" target="_blank">group </a> of <a href = "https://martin-hebart.de/" target="_blank">Martin Hebart</a>,
+        <a href = "https://www.cbs.mpg.de/en" target="_blank"> Max Planck Institute for Human Cognitive & Brain Sciences</a>, Leipzig</td>
+      </tr>
+      <tr>
+        <td><b>2019 - 2022</b></td>
+        <td >M.Sc. Psychology, University of Leipzig</td>
+      </tr>
+      <tr>
+        <td><b>2015 - 2019</b></td>
+        <td >B.Sc. Psychology, University of Constance</td>
+      </tr>
+    </table>
+  </td>
+  <td>
+    <button style="float: right; vertical-align: top" class = "Butt" onclick="window.open('https://laurastoinski.com/website/cv_stoinski_2026.pdf')">view CV</button>
+  </td>
+  <td style = "float: right; vertical-align: top">
+    <img class="Img" id = "lib" src="https://laurastoinski.com/website/library.jpeg">
+  </td>
+</table>
+
+<!--- Publications ----->
+<br style = "line-height: 80%;">
+<section id = "pub" class = "text">
+  <table>
+    <td>
+      <button class = "Butt2" style = "float: left; background-color:black; height: 74vw">
+        <span style="color: white">CONTRIBUTIONS <br> & RESOURCES</span>
+      </button>
+    </td>
+    <td id = "pubList">
+      <p class="hanging"><b>PUBLICATIONS:</b></p>
+      <p class="hanging"> <b> Stoinski, L. M.</b>, Konkle, T., & Hebart, M. N. (2026). Principles of coarse-scale functional organization in occipitotemporal cortex 
+        (p. 2026.02.18.706551). <i>bioRxiv</i>. <a href = "https://doi.org/10.64898/2026.02.18.706551 " target="_blank">[preprint]</a></p>
+      <br style = "line-height: 20%;">
+      <p class="hanging"> Mukherjee, K., Huey, H., <b> Stoinski, L. M.</b>, Hebart, M. N., Fan, J., & Bainbridge10, W. A. (2025). Drawings of THINGS: A large-scale drawing dataset of 1,854 object concepts. <i>Behavior Research Methods, 58(2)</i>, 57. <a href = "https://doi.org/10.3758/s13428-025-02887-w" target="_blank">[full article]</a></p>
+      <br style = "line-height: 20%;">
+      <p class="hanging"> <b>Stoinski, L. M.</b>, Perkuhn, J., & Hebart, M. N. (2023). THINGSplus: New Norms and Metadata for the THINGS Database of 1,854 Object Concepts and 26,107 Natural Object Images. <i>Behavior Research Methods</i>. <a href = "https://doi.org/10.3758/s13428-023-02110-8" target="_blank">[full article]</a></p>
+      <br style = "line-height: 20%;">
+      <p class="hanging">Sikström, S., <b>Stoinski, L. M.</b>, Karlsson, K., Stille, L., & Willander, J. (2020). Weighting power by preference eliminates gender differences. <i>PLOS ONE</i>, <i>15</i>(11). </p>
+      <br style = "line-height: 100%;">
+	  <br style = "line-height: 100%;">
+      
+      <p class="hanging"><b>CONFERENCE POSTER:</b></p>
+      <p class="hanging"><b>Stoinski, L. M.</b>, Diego García Cerdas, Florian P. Mahner, Parsa Yousefi, & Martin N. Hebart (2025, August). Quantifying the Role of Perceived Curvature in the Processing of Natural Object Images.
+      The 8th annual conference on Cognitive Computational Neuroscience (CCN), Amsterdam, Netherlands. <a href = "https://laurastoinski.com/website/CCN_curvature_25_posterA0-compressed.pdf" target="_blank">[pdf]</a>, <a href = "https://2025.ccneuro.org/abstract_pdf/Stoinski_2025_Quantifying_Role_Perceived_Curvature_Processing_.pdf" target="_blank">[abs]</a></p>
+      <br style = "line-height: 100%;">
+      <p class="hanging"><b>Stoinski, L. M.</b>, Zhuang, T., Baker, C. I, & Hebart, M. N. (2025, March). Comparing the Multidimensional Mental Representations of Object Images and Object Nouns.
+      Annual Meeting of the Cognitive Neuroscience Society (CNS), Boston, MA, USA. <a href = "https://laurastoinski.com/website/Poster_Stoinski_triplets_CNS25_small.pdf" target="_blank">[pdf]</a></p>
+      <br style = "line-height: 100%;">
+      <p class="hanging"><b>Stoinski, L. M.</b>, Müller, K. & Hebart, M. N. (2024, May). Quantifying the role of perceived curvature in the processing of natural object images. 
+      Annual Meeting of the Vision Sciences Society, St. Pete Beach, FL, USA. <a href = "https://laurastoinski.com/website/Poster_Stoinski_curvature_VSS24_revised.pdf" target="_blank">[pdf]</a></p>
+      <br style = "line-height: 100%;">
+      <p class="hanging"><b>Stoinski, L. M.</b>, Contier, O., Konkle, T., & Hebart, M. N. (2023, May). Revisiting the animacy, size, and curvature organization of human visual cortex. Annual Meeting of the Vision Sciences Society, St. Pete Beach, FL, USA.
+      <a href = "https://laurastoinski.com/website/Stoinski_VSS2023_aniSize.pdf" target="_blank">[pdf]</a>, <a href = "https://jov.arvojournals.org/article.aspx?articleid=2791451" target="_blank">[abs]</a></p>
+      <br style = "line-height: 100%;">
+      <p class="hanging"><b>Stoinski, L. M.</b>, Perkuhn, J., & Hebart, M. N. (2022, May). THINGS+: new norms and metadata for the THINGS database of 1,854 object concepts and 26,107 natural object images. Annual Meeting of the Vision Sciences Society, St. Pete Beach, FL, USA.
+      <a href = "https://laurastoinski.com/website/Poster_Stoinski_THINGSplus_VSS22.pdf" target="_blank">[pdf]</a>, <a href = "https://jov.arvojournals.org/article.aspx?articleid=2784066&resultClick=1" target="_blank">[abs]</a></p>
+      <br style = "line-height: 100%;">
+	  <br style = "line-height: 100%;">
+      
+      <p class="hanging"><b>CONFERENCE TALKS:</b></p>
+      <p class="hanging"><b>Stoinski, L. M.</b>, Diego García Cerdas, Florian P. Mahner, Parsa Yousefi, & Martin N. Hebart (2025, August). Quantifying the Role of Perceived Curvature in the Processing of Natural Object Images.
+      The 8th annual conference on Cognitive Computational Neuroscience (CCN), Amsterdam, Netherlands. <a href = "https://hva-uva.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=59ac1871-1f1d-4754-bdcc-b32100cff8bd&start=4140" target="_blank">[video]</a></p>
+      <br style = "line-height: 100%;">
+      <p class="hanging"><b>Stoinski, L. M.</b>, Contier O., Kämmer L., & Hebart, M. N. (2024, November). From vision to semantics and back: Rethinking the function of the ventral visual system.
+      Institute Colloquium of the Max Planck Institute CBS, Leipzig, Germany. <a href = "https://imprs-neurocom.mpg.de/events/39317/167961" target="_blank">[abstract]</a></p>
+      <br style = "line-height: 100%;">
+      <p class="hanging"><b>Stoinski, L. M.</b>, Konkle, T., & Hebart, M. N. (2024, March). The topographic organization of diverse object properties in the human visual system. 
+      66th Conference of Experimental Psychologists (teaP), University of Regensburg, Germany. <a href = "https://coms.events/teap-2024-regensburg/data/abstracts/en/abstract_0428.html" target="_blank">[abstract]</a></p>
+    </td>
+  </table>
+  <br>
+  <table style="width: 100%">
+    <tr style = "background-color: #f8f7f7">
+      <td class = "text">
+        <p><b>THINGS</b> is a freely available, large-scale database of 1,854 systematically sampled object concepts and 26,107 high-quality naturalistic images of these concepts. We recently extended THINGS by adding concept- and image-specific norms, 53 higher-level category memberships, and one license-free image per concept.</p>
+        <p>With this project, we hope to provide researchers with a valuable resource of normed living and non-living object stimuli. Many laboratories around the world have started collecting data with THINGS and made their data publicly available for research purposes. Interested in using THINGS?
+        <a href = "https://osf.io/jum2f/" target="_blank"> Check it out here &#10132;</a></p>
+      </td>
+      <td style = "float: right">
+        <button  class = "Butt2" onclick="window.open('https://things-initiative.org/')">THINGS <br> INITIATIVE</button>
+      </td>
+    </tr>
+    <tr>
+    </tr>
+  </table>
+</section>
+
+<!--- Contact ----------->
+<br>
+<section id = "contact">
+ <table style = "text-align: center; border: 0.3vw solid black;width: 100%">
+   <colgroup>
+      <col span="1" style="width: 25%;">
+      <col span="1" style="width: 25%;">
+      <col span="1" style="width: 25%">
+      <col span="1" style="width: 25%">
+   </colgroup>
+   
+   <td><a id="email-link"
+          class="contactButt"
+        href="mailto:stoinski@cbs.mpg.de"
+        data-email="stoinski@cbs.mpg.de"
+        title="stoinski@cbs.mpg.de"
+        >E-MAIL</a></td>
+   <td><a class = "contactButt" href = "https://bsky.app/profile/laurastoinski.bsky.social" target="_blank"> BLUESKY </a></td>
+   <td><a class = "contactButt" href = "https://www.linkedin.com/in/laura-stoinski-a0869515b/" target="_blank"> LINKEDIN </a></td>
+   <td><a class = "contactButt" href = "https://www.researchgate.net/profile/Laura_Stoinski" target="_blank"> RESEARCH GATE </a></td>
+  </table>
+</section>
+<br style = "line-height: 2vw;">
+
+<script>
+
+
+
+ 
+</script>
+  
+</body>
+</html>
+</html>
+
+
